@@ -1,23 +1,11 @@
+from collections import Counter
 class Solution(object):
     def topKFrequent(self, nums, k):
-        freq = {}
 
-        # Count frequency
-        for num in nums:
-            freq[num] = freq.get(num, 0) + 1
-
-        # Create buckets
-        bucket = [[] for _ in range(len(nums) + 1)]
-
-        # Put numbers into buckets
-        for num, count in freq.items():
-            bucket[count].append(num)
-
-        ans = []
-
-        # Take elements from highest frequency
-        for i in range(len(bucket) - 1, 0, -1):
-            for num in bucket[i]:
-                ans.append(num)
-                if len(ans) == k:
-                    return ans
+        count = Counter(nums)
+        ret = []
+        def get_values(x):
+            return count[x]
+        count = sorted(count, key=get_values)
+        ret = [name for name in count[-k:]]
+        return ret
