@@ -1,11 +1,13 @@
 class Solution(object):
-    def findContentChildren(self, g, s):
-        g.sort()
-        s.sort()
-        i=0
+    def findContentChildren(self, child, cookies):
+        child.sort(reverse = True)
+        cookies.sort(reverse = True)
+        j=0
         ans = 0
-        for j in range(len(s)):
-            if i < len(g) and s[j] >= g[i]:
-                ans=ans+1
-                i=i+1
+        for i in child:
+            if j >= len(cookies):
+                break
+            if cookies[j] >= i:
+                ans = ans + 1 
+                j=j+1
         return ans
