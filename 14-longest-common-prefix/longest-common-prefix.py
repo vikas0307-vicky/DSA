@@ -6,7 +6,6 @@ class Solution(object):
         last = strs[-1]
 
         ans = ""
-         
         for i in range(min(len(first),len(last))):
             if first[i] == last[i]:
                 ans = ans+first[i]
