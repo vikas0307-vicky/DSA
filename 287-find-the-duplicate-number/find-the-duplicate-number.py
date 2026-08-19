@@ -1,9 +1,19 @@
-class Solution:
-    def findDuplicate(self, nums: List[int]) -> int:
-        h={}
+class Solution(object):
+    def findDuplicate(self, nums):
+        s1= set()
         for i in nums:
-            if (i in h.keys()):
+            if i in s1:
                 return i
-            else:
-                h[i]=0
+            s1.add(i)
+
+
+                #was is alredy present
+                # else: for new entry
+
+
+  
+
+
+        
+
         
