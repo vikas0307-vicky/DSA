@@ -9,7 +9,12 @@ class Solution(object):
             if i in s1:
                 return i
             s1.add(i)
-
+        # h={}
+        # for i in nums:
+        #     if(i in h.keys()):
+        #         return i
+        #     else:
+        #         h[i] = 0
 
                 #was is alredy present
                 # else: for new entry
