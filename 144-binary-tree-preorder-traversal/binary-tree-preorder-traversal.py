@@ -7,6 +7,7 @@
 
 
 class Solution(object):
+    
     def __init__(self):
         self.ans = []
     def preorder(self,root):
@@ -22,8 +23,5 @@ class Solution(object):
         self.ans=[]
         self.preorder(root)
         return self.ans
-        """
-        :type root: Optional[TreeNode]
-        :rtype: List[int]
-        """
+
         
