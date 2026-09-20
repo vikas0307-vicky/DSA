@@ -13,11 +13,11 @@ class Solution(object):
         #         curr = curr.next
         
         # return head
-        cur=head
-        while cur:
-            while cur.next and cur.next.val==cur.val:
-                cur.next=cur.next.next
-            cur=cur.next
+        current=head
+        while current:
+            while current.next and current.next.val==current.val:
+                current.next=current.next.next
+            current=current.next
         return head
 
     
