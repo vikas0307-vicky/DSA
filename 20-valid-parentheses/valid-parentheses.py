@@ -29,13 +29,14 @@ class Solution(object):
             ']':'[',
             '}':'{'
         }
-
         for i in s:
             if i in mp:
-                if not stack or stack[-1] != mp[i]:
+                if not  stack or stack[-1] != mp[i]:
                     return False
                 stack.pop()
             else:
                 stack.append(i)
 
-        return len(stack) == 0
+        if len(stack) == 0:
+            return True
+        return False
