@@ -16,7 +16,8 @@ class Solution(object):
         #     else:
         #         h[i] = 0
 
-                #was is alredy present
+        
+                # was is alredy present
                 # else: for new entry
 
 
