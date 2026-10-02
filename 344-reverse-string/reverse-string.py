@@ -10,8 +10,8 @@ class Solution(object):
 
         #     i+=1
         #     j-=1
+        s.reverse()
 
-        return s.reverse()
 
 
         
