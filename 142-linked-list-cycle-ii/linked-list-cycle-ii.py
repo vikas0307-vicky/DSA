@@ -6,20 +6,19 @@ class Solution:
         # l1+l2 = nk 
         # l1 = l1
 
+        slow = fast = head
 
-        slow = head
-        fast = head
-
-        while fast and fast.next:
-
+        while fast and fast.next : 
             slow = slow.next
             fast = fast.next.next
-
-            if slow == fast:
-                slow = head
-                while slow != fast:
-                    slow = slow.next
-                    fast = fast.next
-                return slow
-
-        return None
+            if fast == slow:
+                break
+        else:
+            return None
+        
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+        
+        return slow
