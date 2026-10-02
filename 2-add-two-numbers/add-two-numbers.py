@@ -5,17 +5,10 @@ class Solution(object):
         carry = 0
 
         while l1 or l2 or carry:
-            if l1:
-                x = l1.val
-            else:
-                x = 0
-                
-            if l2:
-                y = l2.val
-            else:
-                y = 0
+            val1 = l1.val if l1 else 0
+            val2 = l2.val if l2 else 0
 
-            total = x + y + carry
+            total = val1 + val2 + carry
             carry = total // 10
 
             current.next = ListNode(total % 10)
@@ -23,7 +16,9 @@ class Solution(object):
 
             if l1:
                 l1 = l1.next
+
             if l2:
                 l2 = l2.next
 
         return dummy.next
+        
