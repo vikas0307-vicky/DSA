@@ -9,12 +9,10 @@ class Solution(object):
         prev = None
 
         while curr != None:
-            next =curr.next
+            next = curr.next
             curr.next = prev
             prev = curr
-            curr =next
-        return prev 
-        head =curr
+            curr = next
+        return prev
+        head = curr
         return head
-
-        
