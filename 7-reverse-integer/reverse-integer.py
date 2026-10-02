@@ -14,21 +14,18 @@
 #             return 0
 #         return(rev)
 
-        
-class Solution(object):
+
+class Solution:
     def reverse(self, x):
-        s = str(x)
+        sign = -1 if x < 0 else 1
+        x = abs(x)
 
-        if x < 0:
-            s = s[1:]
-            s = s[::-1]
-            s = int(s)
-            s = -s
-        else:
-            s = s[::-1]
-            s = int(s)
+        rev = 0
 
-        if -2147483648 <= s <= 2147483647:
-            return s
-        else:
-            return 0
+        while x:
+            rev = rev * 10 + x % 10
+            x //= 10
+
+        rev *= sign
+
+        return rev if -2**31 <= rev <= 2**31 - 1 else 0
