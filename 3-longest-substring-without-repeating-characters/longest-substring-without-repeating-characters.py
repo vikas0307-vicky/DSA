@@ -1,15 +1,17 @@
-class Solution:
+class Solution(object):
     def lengthOfLongestSubstring(self, s):
-        last_seen = {}  # character -> last index where we saw it
-        left = 0
-        best = 0
-
-        for right, ch in enumerate(s):
-            # if ch is already inside the current window, jump left past it
-            if ch in last_seen and last_seen[ch] >= left:
-                left = last_seen[ch] + 1
-
-            last_seen[ch] = right
-            best = max(best, right - left + 1)
-
-        return best
+        """
+        :type s: str
+        :rtype: int
+        """
+        ans = 0
+        p = 0
+        d = {}
+        for i, c in enumerate(s):
+            if c not in d or d[c] < p:
+                ans = max(ans, i - p + 1)
+            else:
+                p = d[c] + 1
+            d[c] = i
+        return ans
+        
