@@ -1,20 +1,19 @@
-class Solution(object):
+class Solution:
     def isValid(self, s):
-        stack =[]
-        mp ={
-            ')':'(',
-            ']':'[',
-            '}':'{'
+        stack = []
+
+        pairs = {
+            ')': '(',
+            ']': '[',
+            '}': '{'
         }
-        for i in s:
-            if i in mp:
-                if not stack or stack[-1] != mp[i]:
+
+        for ch in s:
+            if ch in '([{':
+                stack.append(ch)
+            else:
+                if not stack or stack[-1] != pairs[ch]:
                     return False
                 stack.pop()
-            else:
-                stack.append(i)
 
-        if len(stack) == 0:
-            return True
-        else:
-            return False
+        return len(stack) == 0
