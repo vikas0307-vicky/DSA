@@ -1,19 +1,15 @@
-class Solution(object):
+class Solution:
     def lengthOfLongestSubstring(self, s):
-        
-        if (len(s) <= 1):
-            return len(s)
+        last_seen = {}  # character -> last index where we saw it
+        left = 0
+        best = 0
 
-        substring = s[0]
-        right = 0
-        longest = 1
-        while (right < len(s) - 1):
-            right += 1
-            if s[right] in substring:
-                substring = substring[substring.index(s[right])+1:] + s[right]
-            else:
-                substring = substring + s[right]
-            
-            if (longest < len(substring)):
-                longest = len(substring)
-        return longest
+        for right, ch in enumerate(s):
+            # if ch is already inside the current window, jump left past it
+            if ch in last_seen and last_seen[ch] >= left:
+                left = last_seen[ch] + 1
+
+            last_seen[ch] = right
+            best = max(best, right - left + 1)
+
+        return best
