@@ -4,16 +4,29 @@ class Solution:
         s = list(s)
 
         i = 0
-        j = len(s) - 1
-
-        while i < j:
+        j = len(s)-1
+        while i<j:
             if s[i] not in vowels:
-                i += 1
+                i = i+1
             elif s[j] not in vowels:
-                j -= 1
+                j = j-1
             else:
-                s[i], s[j] = s[j], s[i]
-                i += 1
-                j -= 1
-
+                s[i],s[j]= s[j],s[i]
+                i = i+1
+                j = j-1
         return "".join(s)
+
+        # i = 0
+        # j = len(s) - 1
+
+        # while i < j:
+        #     if s[i] not in vowels:
+        #         i += 1
+        #     elif s[j] not in vowels:
+        #         j -= 1
+        #     else:
+        #         s[i], s[j] = s[j], s[i]
+        #         i += 1
+        #         j -= 1
+
+        # return "".join(s)
