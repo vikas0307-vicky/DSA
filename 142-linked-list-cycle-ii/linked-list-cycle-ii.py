@@ -6,17 +6,20 @@
 
 class Solution(object):
     def detectCycle(self, head):
+        slow = fast = head
 
-        slow = head
-        fast = head
-        while fast and fast.next != None:
+        while fast and fast.next : 
             slow = slow.next
             fast = fast.next.next
-            if slow is fast:
-                slow = head
-                while slow is not fast:
-                    slow = slow.next
-                    fast = fast.next
-                return slow
-        return None
+            if fast == slow:
+                break
+        else:
+            return None
+        
+        slow = head
+        while slow != fast:
+            slow = slow.next
+            fast = fast.next
+        
+        return slow
     
