@@ -1,36 +1,11 @@
 class Solution(object):
     def sortArray(self, nums):
-
-        if len(nums) <= 1:
-            return nums
-
-        mid = len(nums) // 2
-
-        left = self.sortArray(nums[:mid])
-        right = self.sortArray(nums[mid:])
-
-        return self.merge(left, right)
-    
-    def merge(self,left, right):
-        result=[]
-        i=j=0
-
-        while i < len(left) and j<len(right):
-            if left[i] < right[j]:
-                result.append(left[i])
-                i = i+1
-            else:
-                result.append(right[j])
-                j=j+1
-
-
-        result.extend(left[i:])
-        result.extend(right[j:])
-
+        MIN=min(nums)
+        MAX= max(nums)
+        count =[0]*(MAX-MIN + 1)
+        for x in nums:
+            count[x - MIN] += 1
+        result = []
+        for i in range(len(count)):
+            result += [i + MIN] * count[i]
         return result
-            
-
-
-
-
-        
