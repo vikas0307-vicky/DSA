@@ -8,11 +8,23 @@ class Solution(object):
         curr = head
         prev = None
 
-        while curr != None:
-            next = curr.next
+        while curr !=  None:
+            next_node = curr.next
             curr.next = prev
             prev = curr
-            curr = next
+            curr = next_node
         return prev
-        head = curr
-        return head
+        head  = curr
+
+
+        # curr = head
+        # prev = None
+
+        # while curr != None:
+        #     next = curr.next
+        #     curr.next = prev
+        #     prev = curr
+        #     curr = next
+        # return prev
+        # head = curr
+        # return head
