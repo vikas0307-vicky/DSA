@@ -3,8 +3,8 @@ class Solution(object):
         s1 = event1[0]
         e1 = event1[1]
 
-        s2 = event2[0]
-        e2 = event2[1]
+        s2=event2[0]
+        e2=event2[1]
 
         if e1<s2:
             return False
