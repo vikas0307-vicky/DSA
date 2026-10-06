@@ -3,7 +3,7 @@ class Solution(object):
         words = s.split()
 
         if len(pattern) != len(words):
-            return False 
+            return False
 
         c={}
         w={}
@@ -15,8 +15,7 @@ class Solution(object):
             
             if j in w and w[j] != i:
                 return False
-
+            
             c[i] = j
             w[j] = i
         return True
-        
