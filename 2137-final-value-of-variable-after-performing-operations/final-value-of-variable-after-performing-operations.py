@@ -1,9 +1,14 @@
 class Solution(object):
     def finalValueAfterOperations(self, operations):
-        ans = 0
-        for i in operations:
-            if i=="++X" or i=="X++":
-                ans += 1
+        """
+        :type operations: List[str]
+        :rtype: int
+        """
+        ans=0
+        for s in operations:
+            if s=="++X" or s=="X++":
+                ans+=1
             else:
-                ans -=1
+                ans-=1
         return ans
+        
