@@ -1,1 +1,1 @@
-<h2>isomorphic-strings Notes</h2><hr>[ Time taken: 20m 42s ]
+<h2>isomorphic-strings Notes</h2><hr>[ Time taken: 2hrs 6m 16s ]
