@@ -1,10 +1,10 @@
 class Solution(object):
     def finalValueAfterOperations(self, operations):
-        x = 0
+        ans = 0
 
         for i in operations:
-            if "+" in i:
-                x = x+1
+            if i=="++X" or i=="X++":
+                ans = ans + 1
             else:
-                x=x-1
-        return x
+                ans = ans - 1
+        return ans
