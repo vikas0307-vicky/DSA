@@ -6,21 +6,15 @@
 
 class Solution(object):
     def hasCycle(self, head):
-        """
-        :type head: ListNode
-        :rtype: bool
-        """
 
-        dummy = ListNode(None)
+        slow = head
+        fast = head
 
-        while head:
-            next = head.next
-            if next == dummy:
+        while fast and fast.next:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
                 return True
-            head.next = dummy
-            head = next
-        
         return False
-
-
         
