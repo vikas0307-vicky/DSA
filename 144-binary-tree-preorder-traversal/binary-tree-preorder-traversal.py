@@ -4,24 +4,19 @@
 #         self.val = val
 #         self.left = left
 #         self.right = right
-
-
 class Solution(object):
-    
-    def __init__(self):
-        self.ans = []
-    def preorder(self,root):
-        if root is None:
-            return 
-
-
-        self.ans.append(root.val)
-        self.preorder(root.left)
-        self.preorder(root.right)
-
     def preorderTraversal(self, root):
-        self.ans=[]
-        self.preorder(root)
-        return self.ans
+        result=[]
 
-        
+        def preorder(root):
+            if root is None:
+                return 
+
+            result.append(root.val)
+            preorder(root.left)
+            preorder(root.right)
+
+        preorder(root)
+
+        return result
+
