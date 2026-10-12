@@ -5,14 +5,14 @@ class Solution(object):
         # for i in range(len(nums)):
         #     if nums[i] != i:
         #         return i
-
         # return len(nums)
-
-
-        sum1 = sum(nums)
-        n = len(nums)
-        x = n*(n+1)//2
-        return x - sum1
+        
+        # sum1 = sum(nums)
+        # n = len(nums)
+        # x = n*(n+1)//2
+        # return x - sum1
+        n=len(nums)
+        return n*(n+1)//2 - sum(nums)
 
 
         
