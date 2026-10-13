@@ -1,17 +1,20 @@
 class Solution(object):
     def reverseVowels(self, s):
-        v =("aeiouAEIOU")
+        """
+        :type s: str
+        :rtype: str
+        """
+        v="AEIOUaeiou"
         s=list(s)
         left = 0
-        right = len(s)-1
-
+        right=len(s)-1
         while left < right:
             if s[left] not in v:
                 left += 1
-            elif s[right] not  in v:
+            elif s[right] not in v:
                 right -= 1
             else:
-                s[left], s[right] = s[right],s[left]
+                s[left],s[right] = s[right],s[left]
                 left += 1
                 right -= 1
         return "".join(s)
