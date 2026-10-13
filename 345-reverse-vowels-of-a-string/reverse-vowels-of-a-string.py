@@ -4,7 +4,7 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        v="AEIOUaeiou"
+        v=set("AEIOUaeiou")
         s=list(s)
         left = 0
         right=len(s)-1
