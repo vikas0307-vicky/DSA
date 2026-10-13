@@ -1,15 +1,16 @@
 class Solution(object):
     def maxSubArray(self, nums):
-        sum = float("-inf")
-        total = 0
 
+        sum = float("-inf")
+        t = 0
         for i in nums:
-            total = total + i
-            if total > sum:
-                sum = total
-            if total < 0:
-                total = 0
+            t = t + i
+            if t > sum:
+                sum = t
+            if t < 0:
+                t = 0
         return sum
+                
 
              
 
