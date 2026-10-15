@@ -1,13 +1,14 @@
 class Solution(object):
     def removeStars(self, s):
-        skip=0
-        res=[]
-        for i in reversed(s):
+        a=list(s)
+        s=[]
+        for i in a:
             if i == "*":
-                skip+=1
-            elif skip:
-                skip-=1
+                s.pop()
             else:
-                res.append(i)
-        res=reversed(res)
-        return "".join(res)
+                s.append(i)
+
+        ans=""
+        for i in s:
+            ans=ans+i
+        return ans
