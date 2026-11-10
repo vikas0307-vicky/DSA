@@ -1,13 +1,15 @@
 class Solution(object):
     def longestOnes(self, nums, k):
-        zeroes = 0
         l = 0
-        for r , n in enumerate(nums):
-            zeroes += n == 0
-            if zeroes > k:
-                zeroes -= nums[l] == 0
+        
+        for r in range(len(nums)):
+            if nums[r] == 0:
+                k -= 1
+            if k < 0:
+                if nums[l] == 0:
+                    k += 1
                 l += 1
-        return r - l + 1
+        return len(nums) - l
 
 
         
